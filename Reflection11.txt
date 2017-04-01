@@ -1,0 +1,13 @@
+What did you do to complete the task?
+While reviewing the assignment instructions I saw there was extra credit for catching a withdrawal that would exceed the balance. I decided to fix that by allowing BankAccount.withdraw() to throw an exception. Since I was re-writing the BankAccount I decided to add JUnit tests to the two methods with complex behavior and make sure they were doing as they are supposed to.
+
+Once the BankAccount was throwing the proper exceptions I started designing the GUI. I decided the program will put up a "Login" dialog to create the account, then open a 4 button dialog with the four choices. The three buttons for Deposit, Withdraw and information will open modal dialogs to accomplish their tasks. The "quit" button will say logoff and return to the "Login" display.
+
+
+What would you have changed?
+
+What roadblocks did you encounter?
+1. I did not know how to create my own exceptions.
+
+What did you do to overcome these roadblocks?
+1. http://stackoverflow.com/a/8423743/4504607 gave a pattern for creating exceptions by extending the Exception class. At first I was going to make it a specific exception, but then I noticed users could cheat and add to their balance using negative amounts, or decrease their balances with a negative deposit. This lead me to making BankAccount.withdraw() throw two different errors and BankAccount.deposit() throw an error as well. I decided to make one BankAccountException and pass strings in for the specific error.
